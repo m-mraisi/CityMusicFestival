@@ -1,0 +1,283 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+ }
+
+ body {
+    width: 100%;
+    height: 100%;
+ }
+
+ /* Header Elements */
+ header {
+    background-color: #ac28f6;
+    color: #ffffff;
+    
+ }
+ nav {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+    text-align: center;
+ }
+
+ nav ul {
+    list-style-type: none;
+    padding-top: 2%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+
+ }
+
+ nav ul li a{
+    color: #ffffff;
+    font-family: 'Orbitron', Courier, monospace;
+    text-shadow: 0 0 5px 	#ac28f6;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 19.5px;
+ }
+nav ul li a:hover {
+    text-shadow: none;
+    text-decoration: underline;
+}
+ /* Body Elements */
+ main {
+    height:100%;
+    width:100%;
+    background-image:url('../assets/main-bg.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+ }
+
+ #main_container {
+    color: white;
+    text-shadow: 0 0 5px black;
+    width: 60%;
+    text-align: center;
+    padding-top: 15%;
+    padding-bottom: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Orbitron', Courier, monospace;
+
+ }
+
+ #main_container h1 {
+    font-size: 700%;
+    text-transform: uppercase;
+ }
+
+ #main_container p {
+    text-transform: uppercase;
+    font-size: 180%;
+ }
+ 
+ #main_container button {
+    font-size: 120%;
+    font-family: 'Orbitron', Courier, monospace;
+    margin-top: 2%;
+    background-color: 	#c028f6;
+    color: white;
+    padding: 1% 1%;
+    border-radius: 50px;
+ }
+
+ #main_container button:hover {
+    background-color: #0070ff;
+ }
+ 
+ /* Lineup Section */
+section {
+    height: 100%;
+    width: 100%;
+    background-color: 	#d0d0d0;
+}
+
+ #lineup_container {
+    color: white;
+    width: 60%;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Orbitron', Courier, monospace;
+
+ }
+
+ #lineup_container h1 {
+    font-size: 300%;
+    text-shadow: 0 0 5px black;
+    text-transform: uppercase;
+ }
+
+ #lineup_container p {
+    font-size: 100%;
+    text-shadow: 0 0 5px black;
+ }
+
+ #schedule_container {
+    width:100%;
+    height: 100%;
+    background-color: white;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    display: grid;
+    margin-top: 2%;
+    padding: 5% 5%;
+    grid-template-columns: 15% 70% 15%;
+    row-gap: 30px;
+    column-gap: 15px;
+ }
+
+ #schedule_container h1 {
+    background-color: 	#0070ff;
+    margin-top: 1%;
+    border: 1px solid black;
+    font-size: 300%;
+    text-transform: uppercase;
+ }
+
+
+ #schedule_container button {
+    font-size: 120%;
+    font-family: 'Orbitron', Courier, monospace;
+    margin-top: 2%;
+    background-color:#c028f6;
+    color: white;
+    padding: 1% 1%;
+    border-radius: 50px;
+ }
+ #schedule_container button:hover {
+    background-color: #0070ff;
+ }
+
+ #schedule_container p {
+    font-size: 80%;
+    text-shadow: none;
+    color: black;
+ }
+
+/* 
+ Spotify Container */
+
+ #spotify_container {
+    color: white;
+    width: 60%;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Orbitron', Courier, monospace;
+
+ }
+
+ /*sales container */
+
+ #sales_container {
+    width:100%;
+    height: 100%;
+    background-color: #ac28f6;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    padding-top: 2%;
+    
+ }
+
+ #sales_container h1 {
+    font-size: 300%;
+    font-family: 'Orbitron', Courier, monospace;
+    color:white;
+    text-shadow: 0 0 5px black;
+    text-transform: uppercase;
+ }
+
+ #sales_container p {
+    font-family: 'Orbitron', Courier, monospace;
+    color:white;
+    text-transform: uppercase;
+    font-size: 80%;
+    text-shadow: none;
+ }
+
+ #deals_container {
+    width: 45%;
+    margin-right: auto;
+    margin-left: auto;
+    display: grid;
+    padding: 2% 5%;
+    grid-template-columns: 33% 33% 33%;
+    column-gap: 15px;
+ }
+
+ #deal_container{
+    background-color: white;
+    padding:5% 5%;
+    border-radius: 20px;
+    display: grid;
+    row-gap: 50px;
+ }
+
+ #deal_container h2 {
+    font-family: 'Orbitron', Courier, monospace;
+    text-transform: uppercase;
+    font-size: 300%;
+    color: gold ;
+    text-shadow: 0 0 2px black;
+ }
+
+ #deal_container h3 {
+    font-family: 'Orbitron', Courier, monospace;
+    color: black;
+    text-transform: uppercase;
+    font-size: 150%;
+    text-shadow: none;
+ }
+
+ #deal_container i{
+    color: gold ;
+    text-shadow: 0 0 2px black;
+    font-size: 300%;
+    
+ }
+
+ #deal_container button {
+    font-size: 150%;
+    font-family: 'Orbitron', Courier, monospace;
+    margin-top: 2%;
+    background-color: 	#c028f6;
+    color: white;
+    padding: 1% 1%;
+    border-radius: 50px;
+ }
+ #deal_container button:hover {
+    background-color: #0070ff;
+ }
+ 
+
+/* 
+Footer */
+
+footer {
+    background-color: black;
+    color: #ffffff;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+    text-align: center;
+ }
+
+ footer h1{
+    padding-top: 20px;
+    font-family: 'Orbitron', Courier, monospace;
+    color:white;
+    text-transform: uppercase;
+    font-size: 80%;
+ }
