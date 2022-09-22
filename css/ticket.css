@@ -38,46 +38,203 @@ nav ul li a:hover {
     text-shadow: none;
     text-decoration: underline;
 }
-
+body {
+    width: 100%;
+    height: 100%;
+    background-image:url('../assets/main-bg.jpg');
+    background-size: 100%;
+ }
 /* main sections */
 
 main{
-    margin-top: 60px;
-    display: grid;
-    width: 1000px;
-    height: 500px;
-    margin-left:auto;
-    margin-right:auto;
-    text-align:center;
-    border:5px solid magenta;
+    margin-top: 5%;
+    width: 50%;
+    background-color: white;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    font-family: 'Noto Sans', Courier, monospace;
 }
-main > h1{
+#div-main-container {
+    width: 100%;
+    margin-bottom: 1%;
+    border-bottom: 1px solid #bdbdbd;
+}
+
+#div-main-container h1{
+   background-color: #f7f7f7;
+   border: 1px solid #bdbdbd;
+   text-align: left;
+   padding: 1%;
+}
+
+#div-main-container h2{
+    background-color: 	#f7f0ff;
+    width: 95%;
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
     text-align: left;
-    background-color: rgb(188, 180, 180);
-    border: 1px solid rgb(188, 180, 180);
-    padding-left: 10px;
-}
-main > h2{
-    margin: 10px 20px 10px 20px;
+    padding-left: 1%;
+    margin-bottom: 1%;
+ }
+
+ #div-ticket-type-container {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    column-gap: 4%;
+    border-bottom: 2px solid black;
+ }
+
+ #div-ticket-type {
+    padding-left: 5%;
     text-align: left;
-    background-color: lightblue;
-    padding-left: 10px;
-}
+    font-weight: bold;
+    font-size: 150%;
+ }
 
-#div-ticket-type-container,#div-ticket-details{
-    border:5px solid magenta;
-}
+ #ticketType {
+    margin-top:1%;
+    width: 70%;
+    height: 20%;
+    background-color: #f7f0ff;
+    font-weight: bold;
+    font-family: 'Noto Sans', Courier, monospace;
+    border-radius: 10px;
+    font-size: 50%;
+ }
 
-#div-ticket-type-container{
+ #div-ticket-price {
+    padding-left: 5%;
+    font-weight: bold;
+    text-align: left;
+    font-size: 150%;
+ }
+ 
+ #div-ticket-qty {
+    padding-left: 5%;
+    font-weight: bold;
+    text-align: left;
+    font-size: 150%;
+ }
+
+ #input-ticketQty {
+    text-align: center;
+    margin-top:1%;
+    width: 50%;
+    height: 20%;
+    background-color: #f7f0ff;
+    font-family: 'Noto Sans', Courier, monospace;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 50%;
+
+ }
+ #btn-reviewPurchase {
+    width: 50%;
+    height: 20%;
+    margin-bottom: 10%;
+    border-radius: 5px;
+    background-color: #ac28f6;
+    color: white;
+    
+ }
+ #btn-reviewPurchase:hover {
+    background-color: #a453ff;
+ }
+
+ #div-ticket-details {
+    height: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
+    grid-template-columns: 40% 40%;
+    column-gap: 10%;
+ }
 
-#div-ticket-details{
+ #div-delivery-method {
+    text-align: left;
+    padding-left: 5%;
+    font-weight: bold;
+ }
+
+ #div-delivery-method h2 {
+    margin-bottom: 3%;
+ }
+
+
+ #div-order-summary {
+    text-align: left;
+    padding-left: 5%;
+    font-weight: bold;
+ }
+
+ #div-order-summary h2 {
+    margin-bottom: 3%;
+ }
+ #div-order-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    row-gap: 3%;
+    padding-left: 2%;
+ }
+
+ #input-terms {
+    margin-left: 2%;
+    margin-top: 6%;
+ }
+
+ #btn-applyDiscount {
+    background-color: #ac28f6;
+    padding: 3px 3px;
+    color: white;
+    border-radius: 5px;
+ }
+ #btn-applyDiscount:hover {
+    background-color: #a453ff;
+ }
+
+ #btn-ConfirmPurchase {
+    background-color: #ac28f6;
+    margin-left: 2%;
+    margin-top: 2%;
+    padding: 3px 3px;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 3%;
+ }
+ #btn-ConfirmPurchase:hover {
+    background-color: #a453ff;
+ }
+ 
+ #span-coupon-applied{
+   color: #a453ff;
+   font-weight: bold;
+ }
+
+ .error {
+    margin-top: 2%;
+    color:red;
+    font-weight: bold;
+    font-size: 80%;
+ }
+
+ #div-term{
+   /* margin-top: %; */
+   background-color: #f7f7f7;
+   text-align: center;
+   padding: 1%;
 }
 
+#p-terms {
+    padding:0 2%;
+    padding-bottom: 2%;
+    background-color: #f7f7f7;
+    font-style: italic;
+    font-weight: bold;
+    
+}
 /* 
 Footer */
 

@@ -7,6 +7,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/ticket.css">
     <script type="text/javascript" src="./js/ticket.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,82 +32,89 @@
         </nav>
     </header>
     <main>
-        <h1>Buy Tickets</h1>
-        <h2>Please select the desired number of tickets</h2>
-        <div id="div-ticket-type-container">
-            <div id="div-ticket-type">
-                <label for="ticketType">Ticket Type</label>
-                <br>
-                <select id="ticketType" name="ticketType" required>
-                    <option value="none" selected > Select a ticket type:</option>
-                    <option value="1">All Access</option>
-                    <option value="2">Gold Pass</option>
-                    <option value="3">VIP Package</option>
-                </select>
-                <br>
-                <p id="error-ticketType" class="error"></p>
-            </div>
-            <div id="div-ticket-price">
-                <label for="ticketPrice">Price</label>
-                <br>
-                <label for="ticketPrice"><span id="span-ticketPrice">$1000</span></label>
-            </div>
-            <div id="div-ticket-qty">
-                <label for="ticketQty">Quantity</label>
-                <br>
-                <input type="number" name="ticketQty" id="input-ticketQty" min="1" value="2" max="10" placeholder="Insert Quantity" step="1" required>
-                <br>
-                <p id="error-ticketQty" class="error"></p>
-                <br>
-                <button type="submit" id="btn-reviewPurchase">Review Purchase</button>
-            </div>
-        </div>
-        <div id="div-details-container">
-            <div id="div-ticket-details">
-                <div id="div-delivery-method">
-                    <h2>Delivery Method</h2>
-                    <input type="radio" name="deliveryMethod" id="input-radio-email" onclick="disableEmail()">
-                    <label for="email">Email</label>
-                    <input id="input-email" type="email" name="email" 
-                    placeholder="Enter email address" autocomplete="email" maxlength="50">
-                    <br>
-                    <input type="radio" name="deliveryMethod" id="input-radio-pickup" onclick="disableEmail()" checked>
-                    <label for="pickup">Pick Up at Counter</label>
-                    <br>
-                    <label for="discount">Discount Code</label>
-                    <input type="text" id="input-discount" name="input-discount" maxlength="7" placeholder="Enter discount code">
-                    <button id="btn-applyDiscount">Apply Code</button>
-                    <br>
-                    <label for="coupon-applied" id="coupon-applied">
-                        <span id="span-coupon-applied"></span>
-                        <span class="error" id="span-error-coupon"></span>
-                    </label>
+
+        <div id="div-main-container">
+            <h1>Buy Tickets</h1>
+            <h2>Please select the desired number of tickets</h2>
+                <div id="div-ticket-type-container">
+                    <div id="div-ticket-type">
+                        <label for="ticketType">Ticket Type</label>
+                        <br>
+                        <select id="ticketType" name="ticketType" required>
+                            <option value="none" selected class="ticket-options"> Select a ticket type:</option>
+                            <option value="1" class="ticket-options">All Access</option>
+                            <option value="2" class="ticket-options">Gold Pass</option>
+                            <option value="3" class="ticket-options">VIP Package</option>
+                        </select>
+                        <p id="error-ticketType" class="error"></p>
+                    </div>
+                    <div id="div-ticket-price">
+                        <label for="ticketPrice">Price</label>
+                        <br>
+                        <label for="ticketPrice"><span id="span-ticketPrice">$1000</span></label>
+                    </div>
+                    <div id="div-ticket-qty">
+                        <label for="ticketQty">Quantity</label>
+                        <br>
+                        <input type="number" name="ticketQty" id="input-ticketQty" min="1" value="2" max="10" placeholder="Insert Quantity" step="1" required>
+                        <br>
+                        <p id="error-ticketQty" class="error"></p>
+                        <br>
+                        <button id="btn-reviewPurchase">Review Purchase</button>
+                    </div>
                 </div>
-                <div id="div-order-summary">
-                    <h2>Order Summary</h2>
-                    <label for="label-numberOfTickets">Tickets: <span id="span-numberOfTickets"></span></label>
-                    <br>
-                    <label for="label-discount">Discount: <span id="span-discount"></span></label>
-                    <br>
-                    <label for="label-subtotal">Subtotal: <span id="span-subtotal"></span></label>
-                    <br>
-                    <label for="label-tac">Tax: <span id="span-tax"></span></label>
-                    <br>
-                    <label for="label-total">Total: <span id="span-total"></span></label>
-                    <br>
-                    <input type="checkbox" name="terms" id="input-terms" required>
-                    <label for="label-terms">I accept the terms and conditions</label>
-                    <br>
-                    <button type="submit" id="btn-ConfirmPurchase">Confirm Purchase</button>
+
+
+                <div id="div-details-container">
+                <div id="div-ticket-details">
+                    <div id="div-delivery-method">
+                        <h2>Delivery Method</h2>
+                        <input type="radio" name="deliveryMethod" id="input-radio-email" onclick="disableEmail()">
+                        <label for="email">Email</label>
+                        <input id="input-email" type="email" name="email" 
+                        placeholder="Enter email address" autocomplete="email" maxlength="50">
+                        <br><br>
+                        <input type="radio" name="deliveryMethod" id="input-radio-pickup" onclick="disableEmail()" checked>
+                        <label for="pickup">Pick Up at Counter</label>
+                        <br><br>
+                        <label for="discount">Discount Code</label>
+                        <input type="text" id="input-discount" name="input-discount" maxlength="7" placeholder="Enter discount code">
+                        <button id="btn-applyDiscount">Apply Code</button>
+                        <br><br>
+                        <label for="coupon-applied" id="coupon-applied">
+                            <span id="span-coupon-applied"></span>
+                            <span class="error" id="span-error-coupon"></span>
+                        </label>
+                    </div>
+                    <div id="div-order-summary">
+                        <h2>Order Summary</h2>
+                        <div id="div-order-container">
+                        <label for="label-numberOfTickets">Tickets: <span id="span-numberOfTickets"></span></label>
+                        <label for="label-discount">Discount: <span id="span-discount"></span></label> 
+                        <label for="label-subtotal">Subtotal: <span id="span-subtotal"></span></label> 
+                        <label for="label-tac">Tax: <span id="span-tax"></span></label>
+                        <label for="label-total">Total: <span id="span-total"></span></label>
+                        </div>
+                        <input type="checkbox" name="terms" id="input-terms" required>
+                        <label for="label-terms">I accept the terms and conditions</label>
+                        
+                        <button type="submit" id="btn-ConfirmPurchase">Confirm Purchase</button>
+                        
+                    </div>
                 </div>
             </div>
+
         </div>
-        
+
+
+
+
         <div id="div-terms">
             <p id="p-terms">
                 All Ticket sales are final.no refunds.exchanges. or returns. Lorem ipsum sit. we will be changing this laterwe will be changing this laterwe will be changing this laterwe will be changing this laterwe will be changing this later
             </p>
         </div>
+
     </main>
     <footer>
         <h1>&copy;City Music Festival</h1>
@@ -116,3 +126,74 @@
     </footer>
 </body>
 </html>
+
+<!-- <h1>Buy Tickets</h1>
+            <h2>Please select the desired number of tickets</h2>
+            <div id="div-ticket-type-container">
+                <div id="div-ticket-type">
+                    <label for="ticketType">Ticket Type</label>
+                    <br>
+                    <select id="ticketType" name="ticketType" required>
+                        <option value="none" selected > Select a ticket type:</option>
+                        <option value="1">All Access</option>
+                        <option value="2">Gold Pass</option>
+                        <option value="3">VIP Package</option>
+                    </select>
+                    <br>
+                    <p id="error-ticketType" class="error"></p>
+                </div>
+                <div id="div-ticket-price">
+                    <label for="ticketPrice">Price</label>
+                    <br>
+                    <label for="ticketPrice"><span id="span-ticketPrice">$1000</span></label>
+                </div>
+                <div id="div-ticket-qty">
+                    <label for="ticketQty">Quantity</label>
+                    <br>
+                    <input type="number" name="ticketQty" id="input-ticketQty" min="1" value="2" max="10" placeholder="Insert Quantity" step="1" required>
+                    <br>
+                    <p id="error-ticketQty" class="error"></p>
+                    <br>
+                    <button type="submit" id="btn-reviewPurchase">Review Purchase</button>
+                </div>
+            </div>
+            <div id="div-details-container">
+                <div id="div-ticket-details">
+                    <div id="div-delivery-method">
+                        <h2>Delivery Method</h2>
+                        <input type="radio" name="deliveryMethod" id="input-radio-email" onclick="disableEmail()">
+                        <label for="email">Email</label>
+                        <input id="input-email" type="email" name="email" 
+                        placeholder="Enter email address" autocomplete="email" maxlength="50">
+                        <br>
+                        <input type="radio" name="deliveryMethod" id="input-radio-pickup" onclick="disableEmail()" checked>
+                        <label for="pickup">Pick Up at Counter</label>
+                        <br>
+                        <label for="discount">Discount Code</label>
+                        <input type="text" id="input-discount" name="input-discount" maxlength="7" placeholder="Enter discount code">
+                        <button id="btn-applyDiscount">Apply Code</button>
+                        <br>
+                        <label for="coupon-applied" id="coupon-applied">
+                            <span id="span-coupon-applied"></span>
+                            <span class="error" id="span-error-coupon"></span>
+                        </label>
+                    </div>
+                    <div id="div-order-summary">
+                        <h2>Order Summary</h2>
+                        <label for="label-numberOfTickets">Tickets: <span id="span-numberOfTickets"></span></label>
+                        <br>
+                        <label for="label-discount">Discount: <span id="span-discount"></span></label>
+                        <br>
+                        <label for="label-subtotal">Subtotal: <span id="span-subtotal"></span></label>
+                        <br>
+                        <label for="label-tac">Tax: <span id="span-tax"></span></label>
+                        <br>
+                        <label for="label-total">Total: <span id="span-total"></span></label>
+                        <br>
+                        <input type="checkbox" name="terms" id="input-terms" required>
+                        <label for="label-terms">I accept the terms and conditions</label>
+                        <br>
+                        <button type="submit" id="btn-ConfirmPurchase">Confirm Purchase</button>
+                    </div>
+                </div>
+            </div> -->

@@ -53,7 +53,7 @@ nav ul li a:hover {
     height:100%;
     width:100%;
     background-image:url('../assets/main-bg.jpg');
-    background-size: 100%;
+    background-size: contain;
     background-repeat: no-repeat;
  }
 

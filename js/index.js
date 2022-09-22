@@ -23,7 +23,8 @@ document.querySelector("#btn-allAccess-buy").addEventListener("click",()=>{
         "ticketPrice":375
     }
     localStorage.setItem('ticket',JSON.stringify(ticket));
-    window.location.href = "../ticket.html";
+    window.location.href = "/Project-G05/ticket.html";
+    // in windows ../ticket.html does not work.
 })
 
 // document.querySelector("#btn-allAccess-buy").addEventListener("click",buyTicket())
