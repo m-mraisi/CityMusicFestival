@@ -9,6 +9,11 @@
     height: 100%;
  }
 
+ button a {
+   color: white;
+   text-decoration: none;
+}
+
  /* Header Elements */
  header {
     background-color: #ac28f6;
@@ -84,6 +89,7 @@ nav ul li a:hover {
     padding: 1% 1%;
     border-radius: 50px;
  }
+
 
  #main_container button:hover {
     background-color: #0070ff;
