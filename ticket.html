@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Project-G05</title>
     <link rel="stylesheet" href="./css/ticket.css">
     <script type="text/javascript" src="./js/ticket.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,17 +17,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Open+Sans:wght@300&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="./assets/icon.png">
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="#">Music Lineup</a></li>
-                <li><a href="#">Tickets</a></li>
+                <li><a href="./index.html#schedule_container">Music Lineup</a></li>
+                <li><a href="./index.html#deals_container">Tickets</a></li>
                 <li><a href="#">Plan your trip</a></li>
                 <li><a href="#">Shop</a></li>
                 <li><a href="#">Faq</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="./contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -36,6 +37,8 @@
         <div id="div-main-container">
             <h1>Buy Tickets</h1>
             <h2>Please select the desired number of tickets</h2>
+            <p id="error-ticketType" class="error"></p>
+            <p id="error-ticketQty" class="error"></p>
                 <div id="div-ticket-type-container">
                     <div id="div-ticket-type">
                         <label for="ticketType">Ticket Type</label>
@@ -46,7 +49,6 @@
                             <option value="2" class="ticket-options">Gold Pass</option>
                             <option value="3" class="ticket-options">VIP Package</option>
                         </select>
-                        <p id="error-ticketType" class="error"></p>
                     </div>
                     <div id="div-ticket-price">
                         <label for="ticketPrice">Price</label>
@@ -57,8 +59,6 @@
                         <label for="ticketQty">Quantity</label>
                         <br>
                         <input type="number" name="ticketQty" id="input-ticketQty" min="1" value="2" max="10" placeholder="Insert Quantity" step="1" required>
-                        <br>
-                        <p id="error-ticketQty" class="error"></p>
                         <br>
                         <button id="btn-reviewPurchase">Review Purchase</button>
                     </div>
@@ -94,7 +94,7 @@
                             <label for="label-total">Total: <span id="span-total"></span></label>
                             </div>
                             <input type="checkbox" name="terms" id="input-terms" required>
-                            <label for="label-terms">I accept the terms and conditions</label>
+                            <label for="label-terms" id="label-terms">I accept the terms and conditions</label>
                             
                             <button type="submit" id="btn-ConfirmPurchase">Confirm Purchase</button>
                             
@@ -104,16 +104,16 @@
         </div>
         <div id="div-terms">
             <p id="p-terms">
-                All Ticket sales are final.no refunds.exchanges. or returns. Lorem ipsum sit. we will be changing this laterwe will be changing this laterwe will be changing this laterwe will be changing this laterwe will be changing this later
+                All Ticket sales are final.no refunds.exchanges. or returns. **In case any situation arise, and a band or DJ could not make it, all the guests will be refunded wihtin 72 hours of the festival date. Tickets are non-refundable!
             </p>
         </div>
     </main>
     <footer>
-        <h1>&copy;City Music Festival</h1>
+        <h1>&copy; City Music Festival</h1>
         <div id="socials_container">
-            <i class="bi bi-facebook"></i>
-            <i class="bi bi-twitter"></i>
-            <i class="bi bi-instagram"></i>
+            <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="bi bi-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
         </div>
     </footer>
 </body>

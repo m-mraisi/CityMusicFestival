@@ -16,17 +16,22 @@
 
  /* Header Elements */
  header {
-    background-color: #ac28f6;
-    color: #ffffff;
-    
- }
- nav {
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    height: 100px;
-    text-align: center;
- }
+   background-color: #ac28f6;
+   color: #ffffff;
+   height: 70px;
+   
+}
+button{
+  cursor:pointer;
+}
+
+nav {
+   width: 80%;
+   margin-left: auto;
+   margin-right: auto;
+   height: 100px;
+   text-align: center;
+}
 
  nav ul {
     list-style-type: none;
@@ -144,7 +149,10 @@ section {
     background-color: 	#0070ff;
     margin-top: 1%;
     border: 1px solid black;
-    font-size: 300%;
+    display: grid;
+    justify-content: center;
+    align-content:center;
+    font-size:250%;
     text-transform: uppercase;
  }
 
@@ -213,7 +221,7 @@ section {
  }
 
  #deals_container {
-    width: 45%;
+    width: 60%;
     margin-right: auto;
     margin-left: auto;
     display: grid;
@@ -272,18 +280,22 @@ Footer */
 
 footer {
     background-color: black;
-    color: #ffffff;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    height: 100px;
+    height: 70px;
     text-align: center;
  }
 
  footer h1{
-    padding-top: 20px;
+    padding-top: 10px;
     font-family: 'Orbitron', Courier, monospace;
     color:white;
     text-transform: uppercase;
     font-size: 80%;
+    margin-bottom: 10px;
+ }
+ #socials_container  i{
+   color: #ffffff;
+   padding-right: 10px;
  }

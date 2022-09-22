@@ -8,10 +8,15 @@
  header {
     background-color: #ac28f6;
     color: #ffffff;
+    height: 70px;
     
  }
+ button{
+   cursor:pointer;
+ }
+ 
  nav {
-    width: 60%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     height: 100px;
@@ -47,7 +52,7 @@ body {
 /* main sections */
 
 main{
-    margin-top: 5%;
+    margin-top: 8%;
     width: 50%;
     background-color: white;
     margin-right: auto;
@@ -61,14 +66,14 @@ main{
     border-bottom: 1px solid #bdbdbd;
 }
 
-#div-main-container h1{
+#div-main-container > h1{
    background-color: #f7f7f7;
    border: 1px solid #bdbdbd;
    text-align: left;
    padding: 1%;
 }
 
-#div-main-container h2{
+#div-main-container > h2{
     background-color: 	#f7f0ff;
     width: 95%;
     margin-top: 2%;
@@ -213,11 +218,15 @@ main{
    font-weight: bold;
  }
 
+
  .error {
     margin-top: 2%;
     color:red;
     font-weight: bold;
     font-size: 80%;
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 10px;
  }
 
  #div-term{
@@ -238,23 +247,26 @@ main{
 /* 
 Footer */
 
-footer {
-    position: fixed;
-    bottom: 0;
-    background-color: black;
-    color: #ffffff;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    height: 100px;
-    text-align: center;
- }
+ footer {
+   position: fixed;
+   bottom: 0;
+   background-color: black;
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   height: 70px;
+   text-align: center;
+}
 
- footer h1{
-    padding-top: 20px;
-    font-family: 'Orbitron', Courier, monospace;
-    color:white;
-    text-transform: uppercase;
-    font-size: 80%;
- }
-
+footer h1{
+   padding-top: 10px;
+   font-family: 'Orbitron', Courier, monospace;
+   color:white;
+   text-transform: uppercase;
+   font-size: 80%;
+   margin-bottom: 10px;
+}
+#socials_container  i{
+  color: #ffffff;
+  padding-right: 10px;
+}

@@ -24,6 +24,7 @@ const purchaseDetails = ()=>{
         const tax = subtotal * 0.13
         document.querySelector("#span-tax").innerText = `${tax}`
         document.querySelector("#span-total").innerText = `${subtotal + tax}`
+        document.querySelector("main").style.marginTop = "1%" // stretch the tickets block to the top to make space for the ticket details block
         document.querySelector("#div-details-container").style.display = "block";
         return true;
     }
@@ -109,10 +110,13 @@ const checkOrderSummary = ()=>{
     const regEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/; // email pattern
     if(document.querySelector("#input-radio-email").checked && !email.match(regEmail)){
         alert("Please enter a valid email address for the delivery method!")
+        return false;
     }
     else if(!document.querySelector("#input-terms").checked){
         alert("Please accept terms and conditions")
+        return false;
     }
+    alert("You're purchase successfully has been booked!")
     return true; // booked!
 }
 
