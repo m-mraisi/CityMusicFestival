@@ -1,3 +1,4 @@
+/* Project-G05 Mahmoud Mraisi - 101432902  & Jacob Belizario 101411589 */
 * {
     margin:0;
     padding:0;
@@ -58,8 +59,9 @@ nav ul li a:hover {
     height:100%;
     width:100%;
     background-image:url('../assets/main-bg.jpg');
-    background-size: contain;
+    background-size: 100%;
     background-repeat: no-repeat;
+    background-color: #D0D0D0;
  }
 
  #main_container {

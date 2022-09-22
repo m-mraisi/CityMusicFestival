@@ -1,49 +1,49 @@
-
+//Project-G05  Mahmoud Mraisi - 101432902  & Jacob Belizario 101411589
 
 const getTicket = ()=>{
-    document.querySelector("#div-details-container").style.display = "none";
-    const ticket = JSON.parse(localStorage.getItem("ticket"));
+    document.querySelector("#div-details-container").style.display = "none"; // to hide the ticket details, when tehre's no input yet from the user
+    const ticket = JSON.parse(localStorage.getItem("ticket")); // to get the ticket object from the localStorage
     console.log(ticket);
     const ticketType = ticket.ticketType;
     const ticketPrice  = ticket.ticketPrice;
     // document.querySelector("#ticketType").selectedIndex  = ticketType;
-    document.querySelector("#span-ticketPrice").innerText = `$0`
+    document.querySelector("#span-ticketPrice").innerText = `$0` // to set the default price to zero 
 }
 
 const purchaseDetails = ()=>{
-    for (elem of document.querySelectorAll("p.error")){ elem.innerText = ""};
+    for (elem of document.querySelectorAll("p.error")){ elem.innerText = ""}; // to clear all error outputs
     document.querySelector("#input-email").setAttribute('readonly', true) // make the email by default readonly
-    const checkData = validateOrder();
+    const checkData = validateOrder(); // to validate the data
     if(checkData){
-        const getDiscount = applyDiscount()
-        const ticket = JSON.parse(localStorage.getItem("ticket"));
-        document.querySelector("#span-numberOfTickets").innerText = `${document.querySelector("#input-ticketQty").value}`;
-        document.querySelector("#span-discount").innerText = `-$${getDiscount.amount}`
-        const subtotal = parseInt(document.querySelector("#input-ticketQty").value) * parseInt(ticket.ticketPrice) - Number(getDiscount.amount);
-        document.querySelector("#span-subtotal").innerText = `${subtotal}`
+        const getDiscount = applyDiscount() // this function checks the discount if it's correct and return the amount
+        const ticket = JSON.parse(localStorage.getItem("ticket")); // to get the ticket object from the localStorage
+        document.querySelector("#span-numberOfTickets").innerText = `${document.querySelector("#input-ticketQty").value}`; //to change the number of tickets on teh details container
+        document.querySelector("#span-discount").innerText = `-$${getDiscount.amount}` //to change the discount value on teh ticket details container
+        const subtotal = parseInt(document.querySelector("#input-ticketQty").value) * parseInt(ticket.ticketPrice) - Number(getDiscount.amount); // to get teh subtotal
+        document.querySelector("#span-subtotal").innerText = `$${subtotal}` // to apply the subtotal to the ticket details container
         const tax = subtotal * 0.13
-        document.querySelector("#span-tax").innerText = `${tax}`
-        document.querySelector("#span-total").innerText = `${subtotal + tax}`
+        document.querySelector("#span-tax").innerText = `$${tax}` // display the tax amount on teh ticket details container 
+        document.querySelector("#span-total").innerText = `$${subtotal + tax}`
         document.querySelector("main").style.marginTop = "1%" // stretch the tickets block to the top to make space for the ticket details block
-        document.querySelector("#div-details-container").style.display = "block";
+        document.querySelector("#div-details-container").style.display = "block"; // is to show the ticket details container
         return true;
     }
     return false;
 
 }
 
-const applyDiscount = ()=>{
-    const discountCode =  document.querySelector("#input-discount").value;
-    const ticket = JSON.parse(localStorage.getItem("ticket"));
-    document.querySelector("#span-coupon-applied").innerText = ""
-    document.querySelector("#span-error-coupon").innerText = ""
+const applyDiscount = ()=>{// this function checks the discount if it's correct and return the amount
+    const discountCode =  document.querySelector("#input-discount").value; // get's the value from the promo Code textbox
+    const ticket = JSON.parse(localStorage.getItem("ticket")); // get the ticket object from teh localstorage
+    document.querySelector("#span-coupon-applied").innerText = "" // to clear the coupon applied span
+    document.querySelector("#span-error-coupon").innerText = ""// to clear the coupon error span
     console.log(discountCode);
-    if(String(discountCode) === 'MUSIC20'){
+    if(String(discountCode) === 'MUSIC20'){ // cehcks if the coupon is valid
         const discount = {
             "status":true,
-            "amount":parseInt(document.querySelector("#input-ticketQty").value) * parseInt(ticket.ticketPrice) * 0.2,
+            "amount":parseInt(document.querySelector("#input-ticketQty").value) * parseInt(ticket.ticketPrice) * 0.2 // apply the discount amount 20%
         }
-        document.querySelector("#span-coupon-applied").innerText = "Coupon applied!"
+        document.querySelector("#span-coupon-applied").innerText = "Coupon applied!" // display the span "coupon applied"
         return discount
     }
     else{
@@ -57,11 +57,12 @@ const applyDiscount = ()=>{
 
 
 const ticketPrice = ()=>{
-    document.querySelector("#div-details-container").style.display = "none";
-    for (elem of document.querySelectorAll("p.error")){ elem.innerText = ""}
-    const ticket = JSON.parse(localStorage.getItem("ticket"));
-    const selectedTicket = document.querySelector("#ticketType").selectedIndex;
-    if(selectedTicket == 0){
+    document.querySelector("main").style.marginTop = "8%" // to shift down the main container to be in teh center of the page
+    document.querySelector("#div-details-container").style.display = "none"; // to hide the details contrainer
+    for (elem of document.querySelectorAll("p.error")){ elem.innerText = ""} // to clear all the error messages
+    const ticket = JSON.parse(localStorage.getItem("ticket")); // to get the ticket object
+    const selectedTicket = document.querySelector("#ticketType").selectedIndex; // check the ticket type index
+    if(selectedTicket == 0){ // display the ticket price based on teh ticket type
         document.querySelector("#span-ticketPrice").innerText = `$0`
     }
     else if (selectedTicket == 1){
@@ -79,11 +80,11 @@ const ticketPrice = ()=>{
         ticket.ticketType == 3
         ticket.ticketPrice = 1250
     }
-    localStorage.setItem("ticket",JSON.stringify(ticket))
+    localStorage.setItem("ticket",JSON.stringify(ticket)) // apply price changes to the tikcet object on the localStorage
     return true;
 }
 
-const validateOrder = ()=>{
+const validateOrder = ()=>{ // this is to validate the user inputs for any errors
     const ticketType = parseInt(document.querySelector("#ticketType").selectedIndex);
     const tikcetQty = parseInt(document.querySelector("#input-ticketQty").value);
     if(ticketType === 0){ // check if a valid ticket type is selected
@@ -97,7 +98,7 @@ const validateOrder = ()=>{
     return true;
 }
 
-const checkDiscountCode = ()=>{
+const checkDiscountCode = ()=>{ // check the discount appolied 
     const getDiscount = applyDiscount();
     const updatePurchase  = purchaseDetails();
     if(!getDiscount.status){
@@ -105,7 +106,7 @@ const checkDiscountCode = ()=>{
     }
 }
 
-const checkOrderSummary = ()=>{
+const checkOrderSummary = ()=>{ // validate the order summary "email, and the make sure that the user have accpeted the terms"
     const email = document.querySelector("#input-email").value;
     const regEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/; // email pattern
     if(document.querySelector("#input-radio-email").checked && !email.match(regEmail)){
@@ -120,6 +121,16 @@ const checkOrderSummary = ()=>{
     return true; // booked!
 }
 
+const disableEmail = ()=>{ // to disable/enable email textbox based on teh radio button input 
+    if(document.querySelector("#input-radio-email").checked){
+        document.querySelector("#input-email").removeAttribute('readonly')
+    }
+    else{
+        document.querySelector("#input-email").value = ""
+        document.querySelector("#input-email").setAttribute('readonly', true)
+    }
+}
+
 document.querySelector("#btn-reviewPurchase").addEventListener("click",purchaseDetails) // will run the purchase detials on clikcing the review purchase button
 
 document.querySelector("#ticketType").onchange = ticketPrice; // chnages the price tag when the selected ticket changes
@@ -132,12 +143,3 @@ document.querySelector("#btn-ConfirmPurchase").addEventListener("click",checkOrd
 
 document.querySelector("#btn-applyDiscount").addEventListener("click", checkDiscountCode) // check the code applied for discount
 
-const disableEmail = ()=>{
-    if(document.querySelector("#input-radio-email").checked){
-        document.querySelector("#input-email").removeAttribute('readonly')
-    }
-    else{
-        document.querySelector("#input-email").value = ""
-        document.querySelector("#input-email").setAttribute('readonly', true)
-    }
-}

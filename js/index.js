@@ -1,3 +1,5 @@
+// Project-G05 Mahmoud Mraisi - 101432902  & Jacob Belizario 101411589
+
 localStorage.clear()
 
 document.querySelector("#btn-allAccess-buy").addEventListener("click",()=>{
@@ -8,8 +10,6 @@ document.querySelector("#btn-allAccess-buy").addEventListener("click",()=>{
     }
     localStorage.setItem('ticket',JSON.stringify(ticket));
     window.location.href = "../ticket.html";
-    // in windows ../ticket.html does not work.
-    //./Project-G05/ticket.html does not work for Mac
 })
 
 document.querySelector("#btn-goldPass-buy").addEventListener("click",()=>{
