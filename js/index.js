@@ -9,7 +9,7 @@ document.querySelector("#btn-allAccess-buy").addEventListener("click",()=>{
         "ticketPrice":375
     }
     localStorage.setItem('ticket',JSON.stringify(ticket));
-    window.location.href = "../ticket.html";
+    window.location.href = "./ticket.html";
 })
 
 document.querySelector("#btn-goldPass-buy").addEventListener("click",()=>{
@@ -19,7 +19,7 @@ document.querySelector("#btn-goldPass-buy").addEventListener("click",()=>{
         "ticketPrice":690
     }
     localStorage.setItem('ticket',JSON.stringify(ticket));
-    window.location.href = "../ticket.html";
+    window.location.href = "./ticket.html";
 })
 
 document.querySelector("#btn-VIP-buy").addEventListener("click",()=>{
@@ -29,5 +29,5 @@ document.querySelector("#btn-VIP-buy").addEventListener("click",()=>{
         "ticketPrice":1250
     }
     localStorage.setItem('ticket',JSON.stringify(ticket));
-    window.location.href = "../ticket.html";
+    window.location.href = "./ticket.html";
 })
